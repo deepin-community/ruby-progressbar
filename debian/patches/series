@@ -1,0 +1,5 @@
+0001-decent-require-in-spec_helper.patch
+0002-skip-tests-trying-to-open-dev-tty.patch
+0003-skipping-tests-formatting-the-bar.patch
+0004-skip-failing-hash-test.patch
+0005-install-progressbar-rb.patch

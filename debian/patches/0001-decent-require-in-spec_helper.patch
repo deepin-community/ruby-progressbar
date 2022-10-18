@@ -1,0 +1,24 @@
+From: Cédric Boutillier <boutil@debian.org>
+Date: Tue, 27 Mar 2018 11:41:39 +0200
+Subject: decent require in spec_helper
+
+rspectacular removed
+ + this gem is not (yet)? packaged for Debian
+timecop and progressbar added
+
+Last-Updated: 2021-09-10
+---
+ spec/spec_helper.rb | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/spec/spec_helper.rb b/spec/spec_helper.rb
+index 7ef4874..72da8ff 100644
+--- a/spec/spec_helper.rb
++++ b/spec/spec_helper.rb
+@@ -1,4 +1,5 @@
+-require 'rspectacular'
++require "timecop"
++require "progressbar"
+ 
+ RSpec.configure do |config|
+   config.warnings = true

@@ -1,0 +1,224 @@
+ruby-progressbar (1.11.0-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release.
+
+  [ Debian Janitor ]
+  * Remove obsolete fields Contact, Name from debian/upstream/metadata
+    (already present in machine-readable debian/copyright).
+  * Apply multi-arch hints.
+    + ruby-progressbar: Add Multi-Arch: foreign.
+  * Remove constraints unnecessary since buster:
+    + Build-Depends: Drop versioned constraint on ruby-rspec.
+  * Bump debhelper from old 12 to 13.
+
+  [ Daniel Leidert ]
+  * d/control (Standards-Version): Bump tp 4.6.0.
+    (Depends): Use ${ruby:Depends}.
+    (Description): Minor addition based on gemspec content.
+  * d/copyright (Copyright): Update.
+  * d/rules: Enable gem installation layout and test dependencies.
+  * d/patches/*.patch: Refresh patches to apply cleanly.
+  * d/patches/0004-skip-failing-hash-test.patch: Add patch.
+    - Skip failing test. The issue has been reported upstream without any
+      response yet.
+  * d/patches/0005-install-progressbar-rb.patch: Add patch.
+    - Install progressbar.rb file in gem installation layout.
+  * d/patches/series: Enable new patch.
+  * d/upstream/metadata (Bug-Submit): Minor fix.
+
+ -- Daniel Leidert <dleidert@debian.org>  Thu, 07 Oct 2021 00:02:01 +0200
+
+ruby-progressbar (1.10.1-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release.
+  * d/compat: Remove obsolete file.
+  * d/control: Add Rules-Requires-Root.
+    (Build-Depends): Use debhelper-compat 12.
+    (Standards-Version): Bump to 4.5.0.
+    (Depends): Remove interpreter.
+  * d/copyright: Update and add upstream contact.
+  * d/gemspec: Make it a symlink to ruby-progressbar.gemspec.
+  * d/rules: Install upstream changelog. Set DH_RUBY_GEMSPEC.
+  * d/watch: Use releases instead of tags.
+  * d/patches/0002-skip-tests-trying-to-open-dev-tty.patch: Refresh.
+  * d/patches/0003-skipping-tests-formatting-the-bar.patch: Ditto.
+  * d/upstream/: Add metadata.
+
+ -- Daniel Leidert <dleidert@debian.org>  Fri, 07 Feb 2020 16:25:16 +0100
+
+ruby-progressbar (1.9.0-2) unstable; urgency=medium
+
+  * Do not install files bin/console and bin/setup (Closes: #910736)
+
+ -- Cédric Boutillier <boutil@debian.org>  Tue, 20 Nov 2018 22:55:41 +0100
+
+ruby-progressbar (1.9.0-1) unstable; urgency=medium
+
+  [ Antonio Terceiro ]
+  * Remove myself from Uploaders:
+
+  [ Hleb Valoshka ]
+  * Remove myself from uploaders
+
+  [ Cédric Boutillier ]
+  * New upstream version 1.9.0
+    + works with ruby2.5 (Closes: #892191)
+  * Use salsa.debian.org in Vcs-* fields
+  * Bump Standards-Version to 4.2.1 (no changes needed)
+  * Bump debhelper compatibility level to 11
+  * Use https in watch file and copyright format url
+  * Update copyright owner/years
+  * Drop 0001-Make-spec-RSpec3-compatible.patch, not needed anymore
+  * Use github as source in watch file to get the tests
+  * Decent require in spec_helper: remove unpackaged gems, and require timecop
+    and progressbar
+  * Spkip some tests failing in build environment
+  * Use ruby-progressbar.gemspec as gemspec
+  * Use my debian email address in control file
+  * Run wrap-and-sort on packaging files
+  * Use new default gem2deb Rakefile to run the tests
+  * Remove version in the gem2deb build-dependency
+  * Set Testsuite to autopkgtest-pkg-ruby
+
+ -- Cédric Boutillier <boutil@debian.org>  Mon, 08 Oct 2018 20:08:01 +0200
+
+ruby-progressbar (1.4.2-1) unstable; urgency=medium
+
+  * Import upstream version 1.4.2
+  * debian/control
+    - Update Build-Depends
+    - Update Standards-Version to 3.9.6 (no changes)
+    - Add Testsuite: autopkgtest
+    - Add myself to uploaders
+  * Update document list
+  * Update watch file
+  * Update the way tests are run (ruby -> rake)
+  * Refresh debian/rules file
+  * Add patch 0001-Make-spec-RSpec3-compatible.patch
+  * Update copyright file to reflect license change
+
+ -- Hleb Valoshka <375gnu@gmail.com>  Mon, 22 Jun 2015 13:50:24 +0300
+
+ruby-progressbar (0.21.0-1) unstable; urgency=low
+
+  [ Cédric Boutillier ]
+  * Team upload.
+  * debian/control
+    - remove obsolete DM-Upload-Allowed flag
+    - use canonical URI in Vcs-* fields
+
+  [ Jonas Genannt ]
+  * Imported Upstream version 0.21.0
+  * d/control
+    - removed transitional packages
+    - bumped standards version to 3.9.5 (no changes needed)
+
+ -- Jonas Genannt <jonas.genannt@capi2name.de>  Fri, 24 Jan 2014 21:31:58 +0100
+
+ruby-progressbar (0.11.0-2) unstable; urgency=low
+
+  * Bump build dependency on gem2deb to >= 0.3.0~
+
+ -- Cédric Boutillier <cedric.boutillier@gmail.com>  Tue, 26 Jun 2012 14:58:33 +0200
+
+ruby-progressbar (0.11.0-1) unstable; urgency=low
+
+  * New upstream version, from an updated source
+  * Update homepage and debian/watch to point to the new source
+  * Use upstream test suite
+  * Remove the use of rdtool, not needed any more (Closes: #676202)
+  * Add myself to Uploaders:
+  * Bump Standards-Version: to 3.9.3 (no changes needed)
+  * Use upstream test suite and build-depend on ruby-test-unit
+  * Set priority of transitional packages to extra
+  * Convert debian/copyright to DEP-5 copyright-format/1.0
+
+ -- Cédric Boutillier <cedric.boutillier@gmail.com>  Wed, 13 Jun 2012 22:45:04 +0200
+
+ruby-progressbar (0.9-2) unstable; urgency=low
+
+  * Update to new Ruby policy: renamed package and migrated to
+    gem2deb/debhelper
+  * Added a VERY simple test suite to run during the build
+
+ -- Antonio Terceiro <terceiro@debian.org>  Fri, 26 Aug 2011 16:03:30 -0700
+
+libprogressbar-ruby (0.9-1) unstable; urgency=low
+
+  [ Vincent Fourmond ]
+  * Added watch file.
+
+  [ Lucas Nussbaum ]
+  * Fixed Vcs-* to point to dir containing debian/ instead of dir
+    containing trunk/
+  * Added Homepage field.
+
+  [ Paul van Tilburg ]
+  * New upstream release.
+  * Updated debian/control to adhere to Debian policy 3.7.3:
+    - changed section "interpreters" to "libs".
+    - set myself als maintainer, moved the team (address) to the Uploaders
+      field.
+    - bumped standards version to 3.7.3.
+    - added the libprogressbar-ruby package required by Debian Ruby policy.
+    - added build-depend-indep on rdtool.
+    - removed unnecessary build-depend-indep on ruby1.8-dev.
+  * Use CDBS for packaging:
+    - changed debian/rules (use debhelper.mk only).
+    - appended rules to generate documentation.
+    - added debian/libprogressbar.docs to install the documentation.
+    - added debian/libprogressbar1.8.install to install the library.
+  * Removed superfluous debian/dirs.
+
+ -- Paul van Tilburg <paulvt@debian.org>  Fri, 04 Apr 2008 22:44:56 +0200
+
+libprogressbar-ruby (0.8-3) unstable; urgency=low
+
+  * New maintainer.
+  * Added Vcs-*.
+
+ -- Lucas Nussbaum <lucas@lucas-nussbaum.net>  Sat, 08 Dec 2007 13:38:18 +0100
+
+libprogressbar-ruby (0.8-2) unstable; urgency=low
+
+  * dropped ruby1.6 support. (Closes: #367915)
+
+ -- akira yamada <akira@debian.org>  Mon,  5 Jun 2006 11:30:04 +0900
+
+libprogressbar-ruby (0.8-1) unstable; urgency=low
+
+  * new upstream version.
+      - Fixed the bug when caused by the invalid count.  (closes: #231009)
+
+ -- akira yamada <akira@debian.org>  Wed, 11 Feb 2004 20:30:27 +0900
+
+libprogressbar-ruby (0.7-1) unstable; urgency=low
+
+  * new upstream version.
+
+ -- akira yamada <akira@debian.org>  Wed, 21 Jan 2004 03:43:16 +0900
+
+libprogressbar-ruby (0.6-1) unstable; urgency=low
+
+  * new upstream version.
+      - Remove the useless condition after "else".  (closes: #227966)
+
+ -- akira yamada <akira@debian.org>  Sat, 17 Jan 2004 17:54:25 +0900
+
+libprogressbar-ruby (0.5-1) unstable; urgency=low
+
+  * new upstream version.
+  * build for both ruby1.6 and ruby1.8, closes: #213475.
+      - renamed to libprogressbar-ruby1.6 from libprogressbar-ruby. it
+        conflicts/replaces libprogressbar-ruby.
+      - new sub-package libprogressbar-ruby1.8.
+
+ -- akira yamada <akira@debian.org>  Sat,  4 Oct 2003 17:14:18 +0900
+
+libprogressbar-ruby (0.2-1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- akira yamada <akira@debian.org>  Tue, 13 Nov 2001 02:55:52 +0900

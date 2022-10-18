@@ -1,0 +1,25 @@
+From: Daniel Leidert <dleidert@debian.org>
+Date: Wed, 6 Oct 2021 23:46:58 +0200
+Subject: Install progressbar.rb and ruby-progressbar.rb
+
+When changing to the gem installation layout the progressbar.rb is not
+installed.
+
+Forwarded: not-needed
+---
+ ruby-progressbar.gemspec | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/ruby-progressbar.gemspec b/ruby-progressbar.gemspec
+index a31b1db..21509c6 100644
+--- a/ruby-progressbar.gemspec
++++ b/ruby-progressbar.gemspec
+@@ -17,7 +17,7 @@ Gem::Specification.new do |spec|
+   spec.signing_key   = File.expand_path('~/.gem/certs/jfelchner-private_key.pem') if $0 =~ /gem\z/
+ 
+   spec.executables   = []
+-  spec.files         = Dir['{app,config,db,lib/ruby-progressbar}/**/*'] + %w{lib/ruby-progressbar.rb Rakefile README.md LICENSE.txt}
++  spec.files         = Dir['{app,config,db,lib/ruby-progressbar}/**/*'] + %w{lib/ruby-progressbar.rb lib/progressbar.rb Rakefile README.md LICENSE.txt}
+ 
+   spec.metadata      = {
+     'bug_tracker_uri'   => 'https://github.com/jfelchner/ruby-progressbar/issues',

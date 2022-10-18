@@ -1,0 +1,44 @@
+From: Cédric Boutillier <boutil@debian.org>
+Date: Mon, 11 Jun 2018 18:04:10 +0200
+Subject: Skip tests trying to open /dev/tty
+
+Tests will fail with:
+Errno::ENXIO:
+       No such device or address @ rb_sysopen - /dev/tty
+
+Last-Updated: 2020-02-07T15:54:07+01:00
+---
+ spec/lib/ruby-progressbar/calculators/length_spec.rb | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/spec/lib/ruby-progressbar/calculators/length_spec.rb b/spec/lib/ruby-progressbar/calculators/length_spec.rb
+index 2d63b23..280b705 100644
+--- a/spec/lib/ruby-progressbar/calculators/length_spec.rb
++++ b/spec/lib/ruby-progressbar/calculators/length_spec.rb
+@@ -57,7 +57,7 @@ describe  Length do
+   end
+ 
+   unless RUBY_VERSION.start_with?('1.')
+-    it 'asks stream for length if it is a TTY' do
++    xit 'asks stream for length if it is a TTY' do
+       allow(tty_output).to receive(:winsize).and_return [123, 456]
+       allow(IO).to         receive(:console).and_call_original
+ 
+@@ -67,7 +67,7 @@ describe  Length do
+       expect(length_calculator.length).to be 456
+     end
+ 
+-    it 'asks IO.console to calculate length if the output is null' do
++    xit 'asks IO.console to calculate length if the output is null' do
+       allow(tty_output).to receive(:winsize).and_return [123, 456]
+       allow(IO).to         receive(:console).and_return(tty_output)
+ 
+@@ -78,7 +78,7 @@ describe  Length do
+                                           at_least(:once)
+     end
+ 
+-    it 'asks IO.console to calculate length if the output is not a TTY' do
++    xit 'asks IO.console to calculate length if the output is not a TTY' do
+       allow(non_tty_output).to receive(:winsize).and_return [654, 321]
+       allow(tty_output).to     receive(:winsize).and_return [123, 456]
+       allow(IO).to             receive(:console).and_return(tty_output)

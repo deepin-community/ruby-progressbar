@@ -1,0 +1,30 @@
+Source: ruby-progressbar
+Maintainer: Debian Ruby Team <pkg-ruby-extras-maintainers@lists.alioth.debian.org>
+Uploaders: Paul van Tilburg <paulvt@debian.org>,
+           Cédric Boutillier <boutil@debian.org>
+Section: ruby
+Priority: optional
+Build-Depends: debhelper-compat (= 13),
+               gem2deb,
+               rake,
+               ruby-rspec,
+               ruby-timecop
+Standards-Version: 4.6.0
+Vcs-Browser: https://salsa.debian.org/ruby-team/ruby-progressbar
+Vcs-Git: https://salsa.debian.org/ruby-team/ruby-progressbar.git
+Homepage: https://github.com/jfelchner/ruby-progressbar
+Testsuite: autopkgtest-pkg-ruby
+XS-Ruby-Versions: all
+Rules-Requires-Root: no
+
+Package: ruby-progressbar
+Architecture: all
+XB-Ruby-Versions: ${ruby:Versions}
+Depends: ${misc:Depends},
+         ${ruby:Depends},
+         ${shlibs:Depends}
+Multi-Arch: foreign
+Description: text progress bar library for Ruby
+ Ruby/ProgressBar is a text progress bar library for Ruby. It can indicate
+ progress with percentage, bars of various formats, elapsed time and estimated
+ time remaining.
